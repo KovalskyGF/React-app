@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-//-----------> Start export Components <----------//
+//-----------> Begin export Pages <----------//
 import News from './pages/News';
 import Publish from './pages/Publish'
-//-----------> Finish export Components <----------//
+//-----------> End export Pages <----------//
+
+//-----------> Begin export Components <----------//
+import Header from './components/Header';
+
+//-----------> End export Components <----------//
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Header from './components/Header';
 
 
 class App extends Component {
@@ -24,6 +28,7 @@ class App extends Component {
             </div>
           </Router>
        
+          
 
 
           

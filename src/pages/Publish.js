@@ -1,10 +1,14 @@
 import React from 'react';
+import FormPublish from '../components/FormPublish';
 
 class Publish extends React.Component {
     render() {
         return (
             <div>
-                <h1>It's page of Publish</h1>
+
+                    
+                    <FormPublish />
+
             </div>
         );
     }
