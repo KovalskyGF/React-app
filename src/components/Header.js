@@ -9,6 +9,7 @@ class Header extends React.Component {
                 <nav class="my-2 my-md-0 mr-md-3">
                     <a class="p-2 text-dark" href="/">News</a>
                     <a class="p-2 text-dark" href="/publish">Add news</a>
+                    <a class="p-2 text-dark" href="/test">Test</a>
                 </nav>
               </div>
           </div>     

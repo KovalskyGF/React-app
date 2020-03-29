@@ -2,6 +2,24 @@ import React from 'react';
 
 
 class FormPublish extends React.Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {value: ''};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+    
+    handleSubmit(event) {
+        alert('Output: ' + this.state.value);
+        event.preventDefault();
+    }
+    
     render() {
         return (
                 <div className="FormPublish">
@@ -9,12 +27,12 @@ class FormPublish extends React.Component {
 	                    <div class="row justify-content-md-center">
 	                        <div class="col-md-6 col-md-offset-2">
     		                    <h1>Create post</h1>
-    		                    <form action="" method="POST">
+    		                    <form onSubmit={this.handleSubmit}>
 
 
                                     <div class="form-group float-left">
                                         <label for="title" >First name   <span class="require ">*</span></label>
-                                        <input type="text" class="form-control" name="slug" />
+                                        <input type="text" value={this.state.value} onChange={this.handleChange} class="form-control" name="slug" />
                                     </div>
 
                                     <div class="form-group float-right">
@@ -55,12 +73,15 @@ class FormPublish extends React.Component {
                                         <button type="submit" class="btn btn-success">
                                             Create
                                         </button>
-                                        <button class="btn btn-default">
+                                        <button type="submit" class="btn btn-default">
                                             Cancel
                                         </button>
                                     </div>
     		    
     		                    </form>
+
+                                <h1>{this.state.value}</h1>
+
 		                    </div>	
 	                    </div>
                     </div>
