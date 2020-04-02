@@ -30,12 +30,9 @@ class FormPublish extends React.Component {
 	                        <div className="col-md-6 col-md-offset-2">
     		                    <h1>Create post</h1>
     		                    <form method="post" action="/publish">
-
-
                                     <div className="form-group float-left">
-                                        <label htmlFor="title" >First name   <span className="require ">*</span>
+                                        <label htmlFor="title" >First name   <span className="require ">*</span></label>
                                         <input type="text" value={this.state.value} onChange={this.handleChange} className="form-control" name="firstname" />
-                                        </label>
                                     </div>
 
                                     <div className="form-group float-right">
@@ -48,7 +45,6 @@ class FormPublish extends React.Component {
                                         <input type="text" className="form-control" name="email" />
                                     </div>
 
-                                    
                                     <div className="form-group float-right">
                                         <label htmlFor="title">Phone <span className="require ">*</span></label>
                                         <input type="text" className="form-control" name="phone" />
@@ -63,17 +59,13 @@ class FormPublish extends React.Component {
                                         <label htmlFor="description">Message</label>
                                         <textarea rows="5" className="form-control" name="message" ></textarea>
                                     </div>
-
-    		    
-                                    <div className="form-group">
-                                        <button type="submit" className="btn btn-success">
+                                    
+                                    <button type="submit" className="btn btn-success">
                                             Create
-                                        </button>
-                                        <button type="submit" className="btn btn-default">
+                                    </button>
+                                    <button type="submit" className="btn btn-default">
                                             Cancel
-                                        </button>
-                                    </div>
-    		    
+                                    </button>
     		                    </form>
 
 
