@@ -8,7 +8,7 @@ export default class FetchNews extends React.Component {
   };
 
   async componentDidMount() {
-    const url = "http://localhost:4000/table";
+    const url = "http://localhost:4000/";
     const response = await fetch(url);
     const result = await response.json();
     this.setState({ loading: false, data: result.items[0]  });

@@ -1,5 +1,8 @@
-var express = require('express');
-var app = express();
+
+const http = require('http');
+
+const hostname = 'localhost';
+const port = 4000;
 
 let table = {
   "items": [
@@ -7,19 +10,16 @@ let table = {
     { "id": 2, "name": "Peaches", "price": "$5" }
   ] 
 }
-      
-let json = JSON.stringify(table);      
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+let data = JSON.stringify(table);
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.end(data);
 });
 
-app.get('/table', function (req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-    res.send(table);
-})
-
-app.listen(4000, function () {
-  console.log('Example app listening on port 4000!');
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
 

@@ -19,68 +19,63 @@ class FormPublish extends React.Component {
         alert('Output: ' + this.state.value);
         event.preventDefault();
     }
+
+
     
     render() {
         return (
                 <div className="FormPublish">
-                    <div class="container">
-	                    <div class="row justify-content-md-center">
-	                        <div class="col-md-6 col-md-offset-2">
+                    <div className="container">
+	                    <div className="row justify-content-md-center">
+	                        <div className="col-md-6 col-md-offset-2">
     		                    <h1>Create post</h1>
-    		                    <form onSubmit={this.handleSubmit}>
+    		                    <form method="post" action="/publish">
 
 
-                                    <div class="form-group float-left">
-                                        <label for="title" >First name   <span class="require ">*</span></label>
-                                        <input type="text" value={this.state.value} onChange={this.handleChange} class="form-control" name="slug" />
+                                    <div className="form-group float-left">
+                                        <label htmlFor="title" >First name   <span className="require ">*</span>
+                                        <input type="text" value={this.state.value} onChange={this.handleChange} className="form-control" name="firstname" />
+                                        </label>
                                     </div>
 
-                                    <div class="form-group float-right">
-                                        <label for="title">Last name<span class="require ">*</span></label>
-                                        <input type="text" class="form-control" name="slug" />
+                                    <div className="form-group float-right">
+                                        <label htmlFor="title">Last name<span className="require ">*</span></label>
+                                        <input type="text" className="form-control" name="lastname" />
                                     </div>
 
-                                    <div class="form-group float-left">
-                                        <label for="title">E-mail<span class="require ">*</span></label>
-                                        <input type="text" class="form-control" name="slug" />
+                                    <div className="form-group float-left">
+                                        <label htmlFor="title">E-mail<span className="require ">*</span></label>
+                                        <input type="text" className="form-control" name="email" />
                                     </div>
 
                                     
-                                    <div class="form-group float-right">
-                                        <label for="title">Phone <span class="require ">*</span></label>
-                                        <input type="text" class="form-control" name="slug" />
+                                    <div className="form-group float-right">
+                                        <label htmlFor="title">Phone <span className="require ">*</span></label>
+                                        <input type="text" className="form-control" name="phone" />
                                     </div>
     		    
-                                    <div class="form-group justify-content-md-center">
-                                        <label for="title">Description <span class="require">*</span></label>
-                                        <input type="text" class="form-control" name="title" />
+                                    <div className="form-group justify-content-md-center">
+                                        <label htmlFor="title">Description <span className="require">*</span></label>
+                                        <input type="text" className="form-control" name="description" />
                                     </div>
-
-
-
-
-                                    
-
-                                    
-                                    
-                                    <div class="form-group">
-                                        <label for="description">Message</label>
-                                        <textarea rows="5" class="form-control" name="description" ></textarea>
+                                                                   
+                                    <div className="form-group">
+                                        <label htmlFor="description">Message</label>
+                                        <textarea rows="5" className="form-control" name="message" ></textarea>
                                     </div>
 
     		    
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-success">
+                                    <div className="form-group">
+                                        <button type="submit" className="btn btn-success">
                                             Create
                                         </button>
-                                        <button type="submit" class="btn btn-default">
+                                        <button type="submit" className="btn btn-default">
                                             Cancel
                                         </button>
                                     </div>
     		    
     		                    </form>
 
-                                <h1>{this.state.value}</h1>
 
 		                    </div>	
 	                    </div>

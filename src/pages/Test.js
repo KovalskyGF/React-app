@@ -29,7 +29,7 @@ class Test extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" value={this.state.value} onChange={this.handleChange} />
                         <hr></hr>
-                        <button type="submit" class="btn btn-success">Complete</button>  
+                        <button type="submit" className="btn btn-success">Complete</button>  
                     </form>  
                     <h1>{this.state.text}</h1>
                 
