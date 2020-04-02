@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { Helmet } from 'react-helmet';
+const NameCurrentPage = "Test";
+
 class Test extends React.Component {
 
     constructor(props) {
@@ -24,6 +27,10 @@ class Test extends React.Component {
     render() {
         return (
             <div>
+                <Helmet>
+                    <title>{ NameCurrentPage }</title>
+                </Helmet>
+
                 <h1>Hello, it's page of Test!</h1>
                 
                     <form onSubmit={this.handleSubmit}>

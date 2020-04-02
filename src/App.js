@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 //-----------> Begin export Pages <----------//
 import News from './pages/News';
-import Publish from './pages/Publish';
+import AddNews from './pages/AddNews';
 import Test from './pages/Test';
 //-----------> End export Pages <----------//
 
@@ -23,7 +23,7 @@ class App extends Component {
             <Header />
               <Switch>
                 <Route exact path="/" component={News} />
-                <Route exact path="/publish" component={Publish} />
+                <Route exact path="/AddNews" component={AddNews} />
                 <Route exact path="/test" component={Test} />
               </Switch>
             </div>

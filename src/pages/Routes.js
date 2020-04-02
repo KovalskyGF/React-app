@@ -12,7 +12,7 @@ export default (
         <Route component={App}>
             
         <Route exact path="/" component={News} />
-        <Route exact path="/publish" component={Publish} />
+        <Route exact path="/AddNews" component={AddNews} />
             
         </Route>
     </Router>

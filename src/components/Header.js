@@ -8,7 +8,7 @@ class Header extends React.Component {
                 <h5 className="my-0 mr-md-auto font-weight-normal">ExampleTask</h5>
                 <nav className="my-2 my-md-0 mr-md-3">
                     <a className="p-2 text-dark" href="/">News</a>
-                    <a className="p-2 text-dark" href="/publish">Add news</a>
+                    <a className="p-2 text-dark" href="/AddNews">Add news</a>
                     <a className="p-2 text-dark" href="/test">Test</a>
                 </nav>
               </div>
