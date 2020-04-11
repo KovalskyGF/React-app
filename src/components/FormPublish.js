@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class FormPublish extends React.Component {
     
     constructor(props) {
@@ -23,8 +22,8 @@ class FormPublish extends React.Component {
         this.setState({ [name]: value }); 
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
+    handleSubmit(e) {
+        e.preventDefault();
         console.log(this.state);
     }
 

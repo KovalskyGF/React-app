@@ -15,20 +15,14 @@ export default class FetchNews extends React.Component {
   }
 
   render() {
-    if (this.state.loading) {
-      return <div>loading...</div>;
-    }
-
-    if (!this.state.data) {
-      return <div>didn't get a person</div>;
-    }
+    if (this.state.loading) { return <div>loading...</div>; }
+    if (!this.state.data) { return <div>didn't get a person</div>; }
 
     return (
           <div>
             <div>{this.state.data.name} {this.state.data.name}</div>
             <div></div>
             <div>{this.state.data.name}</div>
-
           </div>
         );
       }
