@@ -5,23 +5,29 @@ class FormPublish extends React.Component {
     
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {
+                firstname: '',
+                lastname: '',
+                email: '',
+                phone: '',
+                description: '',
+                message: ''
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
+    handleChange(e) {
+        let { value, name } = e.target;
+        this.setState({ [name]: value }); 
     }
-    
+
     handleSubmit(event) {
-        alert('Output: ' + this.state.value);
         event.preventDefault();
+        console.log(this.state);
     }
 
-
-    
     render() {
         return (
                 <div className="FormPublish">
@@ -29,46 +35,44 @@ class FormPublish extends React.Component {
 	                    <div className="row justify-content-md-center">
 	                        <div className="col-md-6 col-md-offset-2">
     		                    <h1>Create post</h1>
-    		                    <form method="post" action="/publish">
+    		                    <form onSubmit={this.handleSubmit}>
                                     <div className="form-group float-left">
-                                        <label htmlFor="title" >First name   <span className="require ">*</span></label>
-                                        <input type="text" value={this.state.value} onChange={this.handleChange} className="form-control" name="firstname" />
+                                        <label htmlFor="title1">First name<span   className="require ">*</span></label>
+                                        <input type="text" value={this.state.firstname} onChange={this.handleChange} className="form-control" name="firstname" />
                                     </div>
 
                                     <div className="form-group float-right">
-                                        <label htmlFor="title">Last name<span className="require ">*</span></label>
-                                        <input type="text" className="form-control" name="lastname" />
+                                        <label htmlFor="title2">Last name<span className="require ">*</span></label>
+                                        <input type="text" value={this.state.lastname} onChange={this.handleChange} className="form-control" name="lastname" />
                                     </div>
 
                                     <div className="form-group float-left">
                                         <label htmlFor="title">E-mail<span className="require ">*</span></label>
-                                        <input type="text" className="form-control" name="email" />
+                                        <input type="text" value={this.state.email} onChange={this.handleChange} className="form-control" name="email" />
                                     </div>
 
                                     <div className="form-group float-right">
                                         <label htmlFor="title">Phone <span className="require ">*</span></label>
-                                        <input type="text" className="form-control" name="phone" />
+                                        <input type="text" value={this.state.phone} onChange={this.handleChange} className="form-control" name="phone" />
                                     </div>
     		    
                                     <div className="form-group justify-content-md-center">
                                         <label htmlFor="title">Description <span className="require">*</span></label>
-                                        <input type="text" className="form-control" name="description" />
+                                        <input type="text" value={this.state.description} onChange={this.handleChange} className="form-control" name="description" />
                                     </div>
                                                                    
                                     <div className="form-group">
                                         <label htmlFor="description">Message</label>
-                                        <textarea rows="5" className="form-control" name="message" ></textarea>
+                                        <textarea rows="5" className="form-control" value={this.state.message} onChange={this.handleChange} name="message" ></textarea>
                                     </div>
                                     
-                                    <button type="submit" className="btn btn-success">
+                                    <button type="submit"  className="btn btn-success">
                                             Create
                                     </button>
                                     <button type="submit" className="btn btn-default">
                                             Cancel
                                     </button>
     		                    </form>
-
-
 		                    </div>	
 	                    </div>
                     </div>
