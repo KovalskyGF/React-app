@@ -25,7 +25,31 @@ class FormPublish extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         console.log(this.state);
+        this.SendData();
     }
+
+    async SendData() { 
+        const url = "http://localhost:4001/";
+        let getFromState = this.state;
+        
+        let defaultOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(getFromState)
+        };
+        try {
+            const response = await fetch(url, defaultOptions);
+            const result = await response.json();
+        }catch(e) {
+            console.log(this.result.message);
+        }
+        
+
+    }
+
+
 
     render() {
         return (
@@ -34,7 +58,7 @@ class FormPublish extends React.Component {
 	                    <div className="row justify-content-md-center">
 	                        <div className="col-md-6 col-md-offset-2">
     		                    <h1>Create post</h1>
-    		                    <form onSubmit={this.handleSubmit}>
+    		                    <form method="POST" onSubmit={this.handleSubmit}>
                                     <div className="form-group float-left">
                                         <label htmlFor="title1">First name<span   className="require ">*</span></label>
                                         <input type="text" value={this.state.firstname} onChange={this.handleChange} className="form-control" name="firstname" />
